@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns="http://www.wabacus.com"
+			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xsi:schemaLocation="http://www.wabacus.com xsd/wabacus.resources.xsd">
+  <!--系统级资源项配置-->
+ <!-- resource key="searchbox_outer_style">
+     <![CDATA[
+	  <table class="cls-search-table"  border="0" cellpadding="0" cellspacing="0" height="40" width="%REPORTWIDTH%" >
+	  <tbody><tr><td>
+	    %INPUTBOX%</td></tr></tbody></table>
+     ]]>
+  </resource-->
+  <resource key="searchbox_outer_style">
+  	<!-- 搜索框样式 %WEBROOT%为根URL占位符，%SKIN%为当前应用配置的主题风格占位符；%SEARCHBOX_CONTENT%为搜索栏内容的占位符（包括输入框，搜索按钮，配置为显示在搜索栏上的按钮等），均在运行时由框架自动构造-->
+     <![CDATA[
+	  <table class="cls-search-table" cellpadding="0" cellspacing="0" width="100%" ><tbody>
+	    <tr><td width="6" align="left" valign="top" background="%WEBROOT%webresources/skin/%SKIN%/images/search05.gif">
+	     <img src="%WEBROOT%webresources/skin/%SKIN%/images/search01.gif" height="6" width="6"/></td>
+	     <td rowspan="3" style="BORDER-TOP: #cfcfcf 1px solid; LINE-HEIGHT: 23px; BORDER-BOTTOM: #cfcfcf 1px solid">%SEARCHBOX_CONTENT%</td>
+		 <td width="6" align="right" valign="top" background="%WEBROOT%webresources/skin/%SKIN%/images/search06.gif"><img src="%WEBROOT%webresources/skin/%SKIN%/images/search03.gif" height="6" width="6"/></td></tr>
+		 <tr><td background="%WEBROOT%webresources/skin/%SKIN%/images/search05.gif"></td><td background="%WEBROOT%webresources/skin/%SKIN%/images/search06.gif"></td></tr>
+		 <tr><td width="6" align="left" valign="bottom" background="%WEBROOT%webresources/skin/%SKIN%/images/search05.gif"><img src="%WEBROOT%webresources/skin/%SKIN%/images/search02.gif" height="6" width="6"/></td><td width="6" align="right" valign="bottom" background="%WEBROOT%webresources/skin/%SKIN%/images/search06.gif"><img src="%WEBROOT%webresources/skin/%SKIN%/images/search04.gif" height="6" width="6"/></td></tr>
+		</tbody></table>
+     ]]>
+  </resource>
+  <!-- 下面为默认的没有查询到报表数据时的提示信息 -->
+  <resource key="nodata.mess">无数据</resource>
+  <!-- 各功能按钮默认图片 -->
+  <resource key="search.button.default.label">查 询</resource>
+  <resource key="add.button.default.label">添 加</resource>
+  <resource key="modify.button.default.label">修 改</resource>
+  <resource key="delete.button.default.label">删 除</resource>
+  <resource key="save.button.default.label">保 存</resource>
+  <resource key="cancel.button.default.label">取 消</resource>
+  <resource key="reset.button.default.label">重 置</resource>
+  <resource key="back.button.default.label">返 回</resource>
+  <!-- 各功能按钮菜单项默认label -->
+  <resource key="add.menu.default.label">添加</resource>
+  <resource key="modify.menu.default.label">修改</resource>
+  <resource key="delete.menu.default.label">删除</resource>
+  <resource key="save.menu.default.label">保存</resource>
+  <resource key="cancel.menu.default.label">取消</resource>
+  <resource key="reset.menu.default.label">重置</resource>
+  <resource key="back.menu.default.label">返回</resource>
+  <resource key="print.label">打印</resource>
+  <resource key="printpreview.label">打印预览</resource>
+  <resource key="printsetting.label">打印设置</resource>
+  
+  <!-- 对可编辑报表进行增、删、改操作时的提示信息 -->
+  <!-- 对可编辑报表只有某一类操作时的提示信息 -->
+  <resource key="insert.success.prompt">添加成功</resource>
+  <resource key="insert.failed.prompt">添加失败</resource>
+  <resource key="update.success.prompt">修改成功</resource>
+  <resource key="update.failed.prompt">修改失败</resource>
+  <resource key="delete.success.prompt">删除成功</resource>
+  <resource key="delete.failed.prompt">删除失败</resource>
+  <!-- 当本次操作即有添加、又有修改操作时的提示信息 -->
+  <resource key="save.success.prompt">保存成功</resource>
+  <resource key="save.failed.prompt">保存失败</resource>
+  <!-- 当本次操作同时有增、删、改记录的操作时的提示信息 -->
+  <resource key="operate.success.prompt">操作成功</resource>
+  <resource key="operate.failed.prompt">操作失败</resource>
+  <resource key="save.nodata.prompt">没有保存/删除任何数据</resource>
+  <!-- 删除报表数据时的确认提示 -->
+  <resource key="delete.confirm.prompt">确认删除报表数据？</resource>
+  
+  <!-- 下面为默认的加载报表数据出错的提示信息 -->
+  <resource key="load.error.mess">
+  	<![CDATA[
+  		<strong>系统忙，请稍后再试！</strong>
+  	]]>
+  </resource>
+  <resource key="fileupload.label">文件上传</resource>
+  <resource key="dataimport.label">导入数据</resource>
+  <resource key="word.label">导出Word</resource>
+  <resource key="richexcel.label">导出Excel</resource>
+  <resource key="plainexcel.label">导出纯数据</resource>
+  <resource key="pdf.label">导出Pdf</resource>
+  <resource key="navigate.alldata.label">不分页</resource><!-- 翻页导航栏中切换页大小的下拉框中，不分页显示的label -->
+  
+  <!-- 下面是行排序列用到的显示资源 -->
+  <resource key="roworder.arrow.label">排序</resource><!-- 箭头排序列标题 -->
+  <resource key="roworder.top.label">置顶</resource><!-- 置顶排序列标题 -->		
+  <resource key="roworder.inputbox.label">排序</resource><!-- 输入框排序列标题 -->
+  
+  <resource key="roworder.arrow.up"><!-- 上移图标 -->
+  <![CDATA[
+  		<input  class="cls-roworder-arrow" type="button" value="↑"/>
+  ]]>
+  </resource>
+  <resource key="roworder.arrow.down"><!-- 下移图标 -->
+  <![CDATA[
+  		<input class="cls-roworder-arrow" type="button" value="↓"/>
+  ]]>
+  </resource>
+  <resource key="roworder.top"><!-- 置顶图标 -->
+  <![CDATA[
+  		<input class="cls-roworder-top" type="button" value=""/>
+  ]]>
+  </resource>
+  
+  
+  <resource key="editablelist.editcol.label">编辑</resource><!-- editablelist报表类型的行编辑列标题 -->
+  <resource key="editablelist.editcol"><!-- editablelist报表类型的行编辑列图标 -->
+  <![CDATA[
+  		<input class="cls-editablelist-editcol" type="button" value=""/>
+  ]]>
+  </resource>
+  
+  <!-- 定义了wabacus按钮样式 -->
+  <resource key="wabacus.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	 <button styleproperty="class='cls-button' onmouseover=&quot;this.className='cls-button-mouseover'&quot; onmouseout=&quot;this.className='cls-button'&quot;" 
+  				disabledstyleproperty="class='cls-button-disabled'"/>
+  </resource>
+  <resource key="wabacus.button2.default" type="com.wabacus.config.resource.ButtonRes">
+  	 <button styleproperty="class='cls-button2' onmouseover=&quot;this.className='cls-button2-mouseover'&quot; onmouseout=&quot;this.className='cls-button2'&quot;"  
+  			  disabledstyleproperty="class='cls-button2-disabled'"/>
+  </resource>
+  
+ <!-- 默认"搜索"按钮 --><!-- 这里positionorder配置为－1，因为在搜索栏中，它必须显示在所有其它按钮的前面 -->
+ <resource key="search.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button  position="searchbox" positionorder="-1" label="${search.button.default.label}"  
+  				extends="${wabacus.button.default}" class="com.wabacus.system.buttons.SearchButton"/>
+ </resource>
+  <!-- 下面的按钮当没有指定position属性时，将不会做为按钮的形式显示出来；当没有配置menulabel属性时，将不会显示在右键菜单项中 -->
+  <!-- 如果要在position中指定它显示在多个位置，则用|号分隔，目前只支持指定title和searchbox，如果要在header、footer、navigate位置显示按钮，则需要在它们的模板中用<wx:button/>进行显示 -->
+ <!-- 默认"新增"按钮 -->
+ <resource key="add.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title|contextmenu" positionorder="1" label="${add.button.default.label}" menulabel="${add.menu.default.label}" menugroup="1110"
+  			  extends="${wabacus.button.default}" class="com.wabacus.system.buttons.AddButton"/>
+ </resource>
+ <!-- 默认"修改"按钮 -->
+ <resource key="modify.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title|contextmenu" positionorder="1" label="${modify.button.default.label}" menulabel="${modify.menu.default.label}" menugroup="1110"
+  			  extends="${wabacus.button.default}" class="com.wabacus.system.buttons.UpdateButton"/>
+ </resource>
+ <!-- 默认"删除"按钮 -->
+ <resource key="delete.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title|contextmenu" positionorder="1" label="${delete.button.default.label}" menulabel="${delete.menu.default.label}" menugroup="1110"
+  			  extends="${wabacus.button.default}" class="com.wabacus.system.buttons.DeleteButton"/>
+ </resource>
+ <!-- 默认"保存"按钮 -->
+ <resource key="save.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title|contextmenu" positionorder="1" label="${save.button.default.label}" menulabel="${save.menu.default.label}" menugroup="1111"
+  			  extends="${wabacus.button.default}" class="com.wabacus.system.buttons.SaveButton"/>
+ </resource>
+ <!-- 默认"取消"按钮 -->
+ <resource key="cancel.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title|contextmenu" positionorder="1" label="${cancel.button.default.label}" menulabel="${cancel.menu.default.label}" menugroup="1111"
+  			  extends="${wabacus.button.default}" class="com.wabacus.system.buttons.CancelButton"/>
+ </resource>
+ <!-- 默认"重置"按钮 -->
+ <resource key="reset.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title|contextmenu" positionorder="1" label="${reset.button.default.label}" menulabel="${reset.menu.default.label}" menugroup="1111" 
+  			  extends="${wabacus.button.default}" class="com.wabacus.system.buttons.ResetButton"/>
+ </resource>
+ <!-- 默认"返回"按钮 -->
+ <resource key="back.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<!-- 默认不显示在任何位置，只显示在页面底部， 所以没有配置position和menulabel-->
+  	<button position="" positionorder="0" label="${back.button.default.label}" 
+  			  extends="${wabacus.button.default}" class="com.wabacus.system.buttons.BackButton"/>
+ </resource>
+ 
+ <!-- 默认"导入数据"按钮 -->
+ <resource key="dataimport.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title" positionorder="3" label="${dataimport.label}" 
+  			  extends="${wabacus.button2.default}" class="com.wabacus.system.buttons.DataImportButton"/>
+ </resource>
+ <!-- 默认"导出Word"按钮 -->
+ <resource key="word.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title" positionorder="2" label="${word.label}" type="word"
+  			  extends="${wabacus.button2.default}" class="com.wabacus.system.buttons.DataExportButton"/>
+ </resource>
+ <!-- 默认"导出Excel"按钮 -->
+ <resource key="richexcel.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title" positionorder="2" label="${richexcel.label}" type="richexcel"
+  			  extends="${wabacus.button2.default}" class="com.wabacus.system.buttons.DataExportButton"/>
+ </resource>
+  <!-- 默认"导出纯数据"按钮 -->
+ <resource key="plainexcel.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title" positionorder="2" label="${plainexcel.label}" type="plainexcel"
+  			  extends="${wabacus.button2.default}" class="com.wabacus.system.buttons.DataExportButton"/>
+ </resource>
+ <!-- 默认"导出PDF"按钮 -->
+ <resource key="pdf.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title" positionorder="2" label="${pdf.label}" type="pdf"
+  			  extends="${wabacus.button2.default}" class="com.wabacus.system.buttons.DataExportButton"/>
+ </resource>
+ <!-- 默认打印按钮 -->
+ <resource key="print.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title" positionorder="4" label="${print.label}" type="print"
+  			  extends="${wabacus.button.default}" class="com.wabacus.system.buttons.PrintButton"/>
+ </resource>
+ <!-- 默认打印预览按钮 -->
+ <resource key="printpreview.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title" positionorder="4" label="${printpreview.label}" type="printpreview"
+  			  extends="${wabacus.button2.default}" class="com.wabacus.system.buttons.PrintButton"/>
+ </resource>
+ <!-- 默认打印设置按钮 -->
+ <resource key="printsetting.button.default" type="com.wabacus.config.resource.ButtonRes">
+  	<button position="title" positionorder="4" label="${printsetting.label}" type="printsetting"
+  			  extends="${wabacus.button2.default}" class="com.wabacus.system.buttons.PrintButton"/>
+ </resource>
+ 
+ <resource key="report.template.default" type="com.wabacus.config.resource.TemplateRes"><!-- 默认报表结构静态模板 -->
+  	<![CDATA[
+  		<wx:searchbox/>
+  		<wx:header top="15"/>
+  		<wx:title top="10"/>
+  		<wx:data/>
+  		<wx:navigate top="3"/>
+  		<wx:footer top="1"/>	
+  	]]>
+ </resource>
+ 
+ <resource key="articlelist.report.template" type="com.wabacus.config.resource.TemplateRes"><!-- 显示成文章列表形式的报表结构静态模板 -->
+  	<![CDATA[
+  		<wx:searchbox/>
+  		<wx:header top="15"/>
+  		<wx:title top="10"/>
+  		<TABLE class='cls-datatable-headline' cellSpacing='0' cellPadding='0' width='100%'  border='0'><TBODY><TR><TD></TD></TR></TBODY></TABLE>
+  		<wx:data top="10"/>
+  		<wx:navigate top="3"/>
+  		<wx:footer top="1"/>	
+  	]]>
+ </resource>
+ 
+ <resource key="dataexport.template.default" type="com.wabacus.config.resource.TemplateRes"><!-- 下面next和last的写法主要是为了说明可以自己提供翻页按钮或label -->
+  	<![CDATA[
+  		<wx:title/>
+  		<wx:data/>
+  	]]>
+ </resource>
+ 
+ <resource key="print.template.default" type="com.wabacus.config.resource.TemplateRes"><!-- 下面next和last的写法主要是为了说明可以自己提供翻页按钮或label -->
+  	<![CDATA[
+  		<wx:title/>
+  		<wx:data/>
+  	]]>
+ </resource>
+ 
+ <resource key="print.pageinfo.default">'页码：'+wx_content{pageno}+'/'+wx_content{pagecount}</resource><!-- 报表打印时，默认的页码信息 -->
+ 
+ <resource key="listreport.navigate.default" type="com.wabacus.config.resource.TemplateRes"><!-- 下面next和last的写法主要是为了说明可以自己提供翻页按钮或label -->
+  		<![CDATA[
+  			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  			  <tr>
+  				<td align="left">
+  					<span class="cls-navigate-info">
+  						当前第<wx:navigate type="pageno"/>/<wx:navigate type="pagecount"/>页
+  						共<wx:navigate type="recordcount"/>条记录
+  						转到第<wx:navigate type="pageno">textbox</wx:navigate>页
+  					</span>
+  				</td>
+  				<td align="right">
+  					<wx:navigate type="first"/>
+  					<wx:navigate type="previous"/>
+  					<wx:navigate type="sequence" initcount="5" maxcount="5" minlength="2"><u>[%PAGENO%]</u></wx:navigate>
+  					<wx:navigate type="next"><span class="cls-navigate-link"><input type="button" class="cls-navigate-nextbutton"/></span></wx:navigate>
+  					<wx:navigate type="last"><span class="cls-navigate-link"><input type="button" class="cls-navigate-lastbutton"/></span></wx:navigate>
+  				 </td>
+  				</tr>
+  			</table>
+  		]]>
+  </resource>
+  <resource key="detailreport.navigate.default" type="com.wabacus.config.resource.TemplateRes">
+  		<![CDATA[
+  			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  			  <tr>
+  				<td align="left">
+  					<span class="cls-navigate-info">
+  						当前第<wx:navigate type="pageno"/>/<wx:navigate type="pagecount"/>条
+						&nbsp;
+  						转到第<wx:navigate type="pageno">textbox</wx:navigate>条
+  					</span>
+  				</td>
+  				<td align="right">
+  					<wx:navigate type="first"/>
+  					<wx:navigate type="previous"/>
+  					<wx:navigate type="sequence" initcount="5" maxcount="5" minlength="2"><u>[%PAGENO%]</u></wx:navigate>
+  					<wx:navigate type="next"/>
+  					<wx:navigate type="last"/>
+  				 </td>
+  				</tr>
+  			</table>
+  		]]>
+  </resource>
+  
+  <!-- 富文本编辑器默认样式 下面将plugins中的autosave删掉了，因为如果有错误，它会定时报出来-->
+  <resource key="richtextbox.params.default">
+  		<![CDATA[
+  			mode : "exact",
+			theme : "advanced",
+			skin : "o2k7",
+			debug:false,
+			language:"cn",
+			plugins : "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,inlinepopups",
+			theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+			theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+			theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
+			theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak,restoredraft",
+			theme_advanced_toolbar_location : "top",
+			theme_advanced_toolbar_align : "left",
+			theme_advanced_statusbar_location : "bottom",
+			theme_advanced_resizing : true
+  		]]>
+  </resource>
+</resources>

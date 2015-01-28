@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wabacus-config xmlns="http://www.wabacus.com"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="http://www.wabacus.com xsd/wabacus.cfg.xsd">
+	<system>	
+		<item name="webroot" value="/"/><!-- 应用的根URL -->
+		<item name="version" value="4.3"/><!-- 版本号 -->
+		<item name="js-create" value="true"/><!--是否关闭自动生成javascript功能，如果关闭，则加载配置文件时不再生成js文件，可以将在其它地方生成好的拷到指定位置，如果不关闭，则每次加载报表配置文件时，都会生成一份javascript文件。默认为打开状态。建议开发环境打开这个功能-->
+		<item name="default-preparedstatement-sql" value="true"/><!--当通过SQL语句生成报表时，这个属性是指定采用preparedstatement方式执行，还是采用statement方式执行,默认为后者。-->
+		<item name="default-report-sqlconvertlevel" value="complete"/><!-- 默认为报表配置的SQL语句是原始SQL语句还是最终SQL语句 -->
+		<item name="pagesplit_side" value="db"/><!--在哪端进行数据分页，默认为数据库层，可以配置为应用层，此时，将value配置成app-->
+		<item name="show-sql" value="false"/><!-- 是否显示执行的SQL语句或存储过程 -->
+		<item name="classcache" value="true"/><!--是否将动态生成的字节码缓存在应用的内存中-->
+		<item name="encode" value="utf-8"/>
+		<item name="prompt-dialog-type" value="artdialog"/><!-- 提示组件类型 -->
+		<item name="default-batchoutput-recordcount" value="100"/><!-- 对于列表报表，批量输出到页面的记录条数 -->
+		<item name="default-jsvalidatetype" value="both"/><!-- 客户端校验类型。默认为失去焦点和提交时都进行校验 -->
+		<item name="default-servervalidatetype" value="onsubmit"/><!-- 服务器端校验类型。默认是提交时进行校验 -->
+		<item name="server-validate-class" value="com.wabacus.util.ValidateTools"/><!--服务器端校验类 -->
+		<item name="default-errorpromptparams-onblur" value="{hide:0,positoin:'bottom'}"/><!-- 在onblur进行客户端/服务器端校验时校验失败出错提示信息的窗口默认参数 -->
+		<item name="default-cellresize" value="1"/><!-- 指定整个项目中所有数据自动列表报表的表格单元格默认可移动性 -->
+		<item name="default-celldrag" value="1"/><!-- 指定整个项目中所有数据自动列表报表的表格单元格默认可拖动性 -->
+		<item name="default-pagesize" value="10"/><!-- 分页显示报表数据时，每页数据的条数 -->
+		<item name="default-pagelazyloadata" value="-1"/><!-- 显示列表报表在页面时默认延迟加载记录数 -->
+		<item name="default-dataexportlazyloadata" value="500"/><!-- 数据导出列表报表时默认延迟加载记录数 -->
+		<item name="default-mouseoverbgcolor" value="#CCFAFF"/><!-- 指定整个项目中所有数据自动列表报表鼠标滑过时的背景色 -->
+		<item name="selectedrow-bgcolor" value="#ACFAF0"/><!-- 被选中行的背景色 -->
+		<item name="default-condition-labelposition" value="inner"/><!-- 查询条件提示标签的显示位置 -->
+		<item name="default-scrollstyle" value="normal"/><!-- 滚动条默认样式 -->
+		<item name="colfilter-maxnum-options" value="100"/><!-- 列过滤时，显示的最大过滤选项数，如果配置为小于等于0的数，则显示所有取出来的选项，否则最多只显示前colfilter–maxnum-options个数的选项 -->
+		<item name="default-colselectlabel-position" value="right"/><!--  列选择图表的显示位置，可取值为left、right、both -->
+		<item name="default-listreport-pagecolselect" value="true"/><!-- 列表报表显示在页面时是否支持列选择的默认配置项 -->
+		<item name="default-listreport-dataexportcolselect" value="false"/><!-- 列表报表显示在导出文件时是否支持列选择的默认配置项 -->
+		<item name="default-detailreport-pagecolselect" value="false"/><!-- 细览报表显示在页面时是否支持列选择的默认配置项 -->
+		<item name="default-detailreport-dataexportcolselect" value="false"/><!-- 细览报表显示在导出文件时是否支持列选择的默认配置项 -->
+		<item name="default-colselect-width" value="160px"/><!-- 列选择时，显示选择列窗口的默认宽度，每个报表还可以通过<report/>标签的colselectwidth属性配置自己的列选择窗口宽度 -->
+		<item name="format-class" value="com.wabacus.util.Tools"/><!-- 格式化类 -->
+		<item name="dataexport-plainexcel-sheetsize" value="10000"/><!-- 导出到plainexcel时，一个sheet显示多少条记录，超过这个记录将新增sheet显示后面的数据 -->
+		<item name="dataexport-autodelete-interval" value="300|600"/><!-- 自动删除在本地生成的导出文件 -->
+		<item name="default-dataexport-directorydateformat" value="yyyyMMdd"/><!-- 命名存放导出文件的目录方式 -->
+		<item name="dataimport-batchupdate-size" value="20"/><!-- 数据导入的批量更新记录数 -->
+		<item name="skin" value="qq"/><!-- 皮肤样式 -->
+		<item name="3des-keyfilepath" value="classpath{/defaultconfig/3des.key}"/><!-- 3des密钥存放位置 -->
+		<item name="dataimport-autodetect-interval" value="60"/><!-- 数据导入的定时线程运行时间间隔，以秒为单位 -->
+		<item name="default-checkpermission" value="true"/><!-- 本应用是否要检查权限，如果在不需要检查权限的应用中关闭它，可以改善性能 -->
+		<item name="default-pagepersonalizeclass" value="com.wabacus.system.commoninterface.DefaultPagePersonalizePersistenceImpl"/><!-- 默认保存页面个性化信息的类 -->
+		<item name="default-reportpersonalizeclass" value="com.wabacus.system.commoninterface.DefaultReportPersonalizePersistenceImpl"/><!-- 默认保存报表/表单个性化信息的类 -->
+		<item name="default-tabpanel-titlewidth" value="150px"/><!-- <tabpanel/>容器默认标题宽度 -->
+		<item name="default-savedatatype" value="changed"/><!-- 保存可编辑报表的数据类型，可取值为all、changed三种 -->
+		<item name="default-checkdirtydata" value="true"/><!-- 默认是否要校验报表是否有没保存的脏数据 -->
+		<item name="default-chart-datatype" value="xmlurl"/><!-- 默认的chart图表数据类型 -->
+		<item name="fusioncharts-autodelete-interval" value="60|120"/><!-- 自动清除xml临时数据文件的间隔和过期时间，以秒为单位 -->
+		<item name="timing-thread-interval" value="30"/><!-- 框架定时线程定时间隔，以秒为单位 -->
+	</system>
+	<!-- 配置所有内置的输入框类型 -->
+	<inputbox-types default="textbox">
+		<!-- 这里的defaultstyleproperty属性不会被覆盖，如果用户配置的styleproperty属性也有这里的同名属性，则会追加到后面，且对editablelist2、editabledetail2上的输入框无效 -->
+		<inputbox-type name="textbox" class="com.wabacus.system.inputbox.TextBox" 
+			defaultstyleproperty="class=&quot;cls-inputbox-normal&quot;
+										 onfocus=&quot;this.select();this.isOnFocus=true;this.className='cls-inputbox-focus';&quot; 
+										 onblur=&quot;this.isOnFocus=false;this.className='cls-inputbox-normal';&quot;
+										 onmouseover=&quot;if(!this.isOnFocus){this.className='cls-inputbox-mouseover';}&quot; 
+										 onmouseout=&quot;if(!this.isOnFocus){this.className='cls-inputbox-normal';}&quot;
+										 onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 普通文本框 -->
+		<inputbox-type name="textareabox" class="com.wabacus.system.inputbox.TextAreaBox"
+			defaultstyleproperty="class=&quot;cls-inputbox-textareabox cls-inputbox-normal&quot;
+										 onfocus=&quot;this.isOnFocus=true;this.className='cls-inputbox-textareabox cls-inputbox-focus';&quot; 
+										 onblur=&quot;this.isOnFocus=false;this.className='cls-inputbox-textareabox cls-inputbox-normal';&quot;
+										 onmouseover=&quot;if(!this.isOnFocus){this.className='cls-inputbox-textareabox cls-inputbox-mouseover';}&quot; 
+										 onmouseout=&quot;if(!this.isOnFocus){this.className='cls-inputbox-textareabox cls-inputbox-normal';}&quot;"/><!-- 多行文本框 -->
+		<inputbox-type name="checkbox" class="com.wabacus.system.inputbox.CheckBox"
+			defaultstyleproperty="onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 复选框 -->
+		<inputbox-type name="selectbox" class="com.wabacus.system.inputbox.SelectBox"
+			defaultstyleproperty="class=&quot;cls-inputbox-normal&quot;
+										 onfocus=&quot;this.isOnFocus=true;this.className='cls-inputbox-focus';&quot; 
+										 onblur=&quot;this.isOnFocus=false;this.className='cls-inputbox-normal';&quot;
+										 onmouseover=&quot;if(!this.isOnFocus){this.className='cls-inputbox-mouseover';}&quot; 
+										 onmouseout=&quot;if(!this.isOnFocus){this.className='cls-inputbox-normal';}&quot;
+										 onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 下拉框 -->
+		<inputbox-type name="combox" class="com.wabacus.system.inputbox.Combox"/><!-- 可输入下拉框 -->
+		<inputbox-type name="radiobox" class="com.wabacus.system.inputbox.RadioBox"
+			defaultstyleproperty="onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 单选框 -->
+		<inputbox-type name="datepicker" class="com.wabacus.system.inputbox.DatePickerBox"
+			defaultstyleproperty="class=&quot;cls-inputbox-normal cls-inputbox-datepicker&quot;
+										 onfocus=&quot;this.isOnFocus=true;this.className='cls-inputbox-focus cls-inputbox-datepicker';&quot; 
+										 onblur=&quot;this.isOnFocus=false;this.className='cls-inputbox-normal cls-inputbox-datepicker';&quot;
+										 onmouseover=&quot;if(!this.isOnFocus){this.className='cls-inputbox-mouseover cls-inputbox-datepicker';}&quot; 
+										 onmouseout=&quot;if(!this.isOnFocus){this.className='cls-inputbox-normal cls-inputbox-datepicker';}&quot;
+										 onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 日期选择框 -->
+		<inputbox-type name="datepicker2" class="com.wabacus.system.inputbox.DatePickerBox2"
+			defaultstyleproperty="class=&quot;cls-inputbox-normal cls-inputbox-datepicker&quot;
+										 onfocus=&quot;this.isOnFocus=true;this.className='cls-inputbox-focus cls-inputbox-datepicker';&quot; 
+										 onblur=&quot;this.isOnFocus=false;this.className='cls-inputbox-normal cls-inputbox-datepicker';&quot;
+										 onmouseover=&quot;if(!this.isOnFocus){this.className='cls-inputbox-mouseover cls-inputbox-datepicker';}&quot; 
+										 onmouseout=&quot;if(!this.isOnFocus){this.className='cls-inputbox-normal cls-inputbox-datepicker';}&quot;
+										 onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 日期选择框2 -->
+		<inputbox-type name="passwordbox" class="com.wabacus.system.inputbox.PasswordBox"
+			defaultstyleproperty="class=&quot;cls-inputbox-normal&quot;
+										 onfocus=&quot;this.select();this.isOnFocus=true;this.className='cls-inputbox-focus';&quot; 
+										 onblur=&quot;this.isOnFocus=false;this.className='cls-inputbox-normal';&quot;
+										 onmouseover=&quot;if(!this.isOnFocus){this.className='cls-inputbox-mouseover';}&quot; 
+										 onmouseout=&quot;if(!this.isOnFocus){this.className='cls-inputbox-normal';}&quot;
+										 onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 密码框 -->
+		<inputbox-type name="file" class="com.wabacus.system.inputbox.FileBox"
+			defaultstyleproperty="class=&quot;cls-inputbox-normal&quot;
+										 onfocus=&quot;this.isOnFocus=true;this.className='cls-inputbox-focus';&quot; 
+										 onblur=&quot;this.isOnFocus=false;this.className='cls-inputbox-normal';&quot;
+										 onmouseover=&quot;if(!this.isOnFocus){this.className='cls-inputbox-mouseover';}this.style.cursor='pointer';&quot; 
+										 onmouseout=&quot;if(!this.isOnFocus){this.className='cls-inputbox-normal';}&quot;
+										 onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 文件上传输入框 -->
+		<inputbox-type name="popupbox" class="com.wabacus.system.inputbox.PopUpBox" 
+			defaultstyleproperty="readonly class=&quot;cls-inputbox-normal&quot;
+										 onfocus=&quot;this.select();this.isOnFocus=true;this.className='cls-inputbox-focus';&quot; 
+										 onblur=&quot;this.isOnFocus=false;this.className='cls-inputbox-normal';&quot;
+										 onmouseover=&quot;if(!this.isOnFocus){this.className='cls-inputbox-mouseover';}this.style.cursor='pointer';&quot; 
+										 onmouseout=&quot;if(!this.isOnFocus){this.className='cls-inputbox-normal';}&quot;
+										 onkeypress=&quot;return onInputBoxKeyPress(event)&quot;"/><!-- 弹出输入框 -->
+		<inputbox-type name="richtextbox" class="com.wabacus.system.inputbox.RichTextBox"/><!-- 富文本编辑器 -->
+		<inputbox-type name="customized" class="com.wabacus.system.inputbox.CustomizedBox"/><!--用户自定义输入框 -->
+	</inputbox-types>
+	<!-- 注册系统内置的数据类型 -->
+	<data-types default="varchar">
+		<data-type name="byte" class="com.wabacus.system.datatype.ByteType"/>
+		<data-type name="boolean" class="com.wabacus.system.datatype.BooleanType"/>
+		<data-type name="short" class="com.wabacus.system.datatype.ShortType"/>
+		<data-type name="int" class="com.wabacus.system.datatype.IntType"/>
+		<data-type name="long" class="com.wabacus.system.datatype.LongType"/>
+		<data-type name="float" defaultformat="###0.00" class="com.wabacus.system.datatype.FloatType"/>
+		<data-type name="double" defaultformat="###0.000" class="com.wabacus.system.datatype.DoubleType"/>
+		<data-type name="bigdecimal" class="com.wabacus.system.datatype.BigdecimalType"/>
+		<data-type name="varchar" class="com.wabacus.system.datatype.VarcharType"/>
+		<data-type name="clob" class="com.wabacus.system.datatype.ClobType"/>
+		<data-type name="blob" class="com.wabacus.system.datatype.BlobType"/>
+		<data-type name="date" defaultformat="yyyy-MM-dd" class="com.wabacus.system.datatype.DateType"/>
+		<data-type name="time" defaultformat="HH:mm:ss" class="com.wabacus.system.datatype.TimeType"/>
+		<data-type name="timestamp" defaultformat="yyyy-MM-dd HH:mm:ss" class="com.wabacus.system.datatype.TimestampType"/>
+		<data-type name="cdate" defaultformat="yyyy-MM-dd" class="com.wabacus.system.datatype.CDateType"/>
+		<data-type name="ctime" defaultformat="HH:mm:ss.SS" class="com.wabacus.system.datatype.CTimeType"/>
+		<data-type name="ctimestamp" defaultformat="yyyy-MM-dd HH:mm:ss.SS" class="com.wabacus.system.datatype.CTimestampType"/>
+	</data-types>
+	<!-- 配置所有内置的容器类型 -->
+	<container-types>
+		<container-type name="panel" class="com.wabacus.system.component.container.panel.Panel"/>
+	  	<container-type name="tabpanel" class="com.wabacus.system.component.container.panel.TabsPanel"/>
+	  	<container-type name="framepanel" class="com.wabacus.system.component.container.panel.FramePanel"/>
+	  	<container-type name="vpanel" class="com.wabacus.system.component.container.panel.VerticalPanel"/>
+	  	<container-type name="hpanel" class="com.wabacus.system.component.container.panel.HorizontalPanel"/>
+	</container-types>
+	<!-- 配置所有内置的报表类型 -->
+	<report-types default="list">
+	  <report-type name="simplelist" class="com.wabacus.system.component.application.report.ListReportType"/>
+	  <report-type name="list" class="com.wabacus.system.component.application.report.UltraListReportType"/>
+	  <report-type name="blocklist" class="com.wabacus.system.component.application.report.BlockListReportType"/>
+	  <report-type name="crosslist" class="com.wabacus.system.component.application.report.CrossListReportType"/>
+	  <report-type name="detail" class="com.wabacus.system.component.application.report.DetailReportType"/>
+	  <report-type name="form" class="com.wabacus.system.component.application.report.EditableFormReportType"/>
+	  <report-type name="listform" class="com.wabacus.system.component.application.report.EditableListFormReportType"/>
+	  <report-type name="editabledetail" class="com.wabacus.system.component.application.report.EditableDetailReportType"/>
+	  <report-type name="editablelist" class="com.wabacus.system.component.application.report.EditableListReportType"/>
+	  <report-type name="editablelist2" class="com.wabacus.system.component.application.report.EditableListReportType2"/>
+	  <report-type name="editabledetail2" class="com.wabacus.system.component.application.report.EditableDetailReportType2"/>
+	  <report-type name="fusioncharts" class="com.wabacus.system.component.application.report.chart.FusionChartsReportType"/>
+	</report-types>
+	
+	<!-- 配置查询报表数据集的provider -->
+	<report-datasetvalue-providers default="relationaldb">
+		<dataset-provider name="relationaldb" class="com.wabacus.system.dataset.select.report.value.RelationalDBReportDataSetValueProvider"/>
+	</report-datasetvalue-providers>
+	
+	<!-- 配置查询其它数据集的provider（比如查询下拉框选项、自动填充数据、输入联想选项数据等） -->
+	<common-datasetvalue-providers default="@">
+		<dataset-provider name="@" class="com.wabacus.system.dataset.select.common.RelationalDBCommonDataSetValueProvider"/>
+	</common-datasetvalue-providers>
+	
+	<!-- 配置更新报表数据的provider类 -->
+	<update-dataset-providers default="rationaldb">
+		<dataset-provider name="rationaldb" class="com.wabacus.system.dataset.update.RationalDBUpdateActionProvider"/>
+		<dataset-provider name="class" class="com.wabacus.system.dataset.update.JavaUpdateActionProvider"/>
+	</update-dataset-providers>
+	
+	<!-- 配置本项目中所有报表页面都必须包含的js文件 %ENCODING%表示当前所使用的编码类型（即在wabacus.cfg.xml中encoding中的配置值）的占位符-->
+	<global-jsfiles>
+		<js-file>/webresources/component/jquery-1.4.4.min.js</js-file>
+		<js-file>/webresources/script/wabacus_system.js</js-file>
+		<js-file>/webresources/script/wabacus_util.js</js-file>
+		<js-file>/webresources/script/wabacus_tools.js</js-file>
+		<js-file>/webresources/component/wabacus_component.js</js-file>
+		<js-file>/webresources/script/%ENCODING%/wabacus_api.js</js-file>
+	</global-jsfiles>
+	<!-- 配置本项目中所有报表页面都必须包含的css文件，%SKIN%为所选主题风格的占位符 -->
+	<global-cssfiles>
+		<css-file>/webresources/skin/%SKIN%/wabacus_system.css</css-file>
+		<css-file>/webresources/skin/%SKIN%/wabacus_container.css</css-file>
+	</global-cssfiles>
+</wabacus-config>
