@@ -174,7 +174,7 @@ public class EditableReportParamBean
         {
             paramvalue=WabacusAssistant.getInstance().getRequestContextStringValue(rrequest,this.paramname,null);  
         }
-        return paramvalue;
+        return paramvalue==null?null:paramvalue.trim();
     }
     
     public String getRealParamValue(String value,ReportRequest rrequest,ReportBean rbean)
