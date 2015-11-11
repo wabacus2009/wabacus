@@ -63,20 +63,24 @@
 
 
 	</developers>
+	<repositories>
+		<repository>
+			<id>osc</id>
+			<url>http://maven.oschina.net/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>osc3</id>
+			 <url>http://maven.oschina.net/content/repositories/thirdparty/</url>
+		</repository>
+	</repositories>
+	
 	<dependencies>
-
-
-
 
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.8.3</version>
 		</dependency>
-
-
-
-
 
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -218,16 +222,15 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>db2</groupId>
-			<artifactId>db2jcc</artifactId>
-			<version>db2-9</version>
-			<scope>provided</scope>
+  			<groupId>com.ibm.db2</groupId>
+  			<artifactId>db2jcc_license_cu</artifactId>
+  			<version>9.7</version>
 		</dependency>
 		<dependency>
-			<groupId>db2</groupId>
-			<artifactId>db2jcc_license_cu</artifactId>
-			<version>db2-9</version>
-			<scope>provided</scope>
+		  <groupId>com.ibm.db2</groupId>
+		  <artifactId>db2jcc</artifactId>
+		  <version>9.1</version>
+		  <classifier>jar</classifier>
 		</dependency>
 
 		<dependency>
