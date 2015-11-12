@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<parent>
-		<groupId>com.googlecode.wabacus</groupId>
-		<artifactId>wabacus-parent</artifactId>
-		<version>1.0.2</version>
-		<relativePath>../wabacus-parent/pom.xml</relativePath>
-	</parent>
+
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.mllw</groupId>
 	<artifactId>wabacus-core</artifactId>
 	<packaging>jar</packaging>
 	<name>wabacus-core</name>
-	<version>4.3-b01</version>
+	<version>4.3</version>
 	<description>wabacus['wæbəkəs]框架---------JAVA通用快速开发平台(The Rapid Platform For J2EE Development)</description>
-	<url>https://code.google.com/p/wabacus/</url>
+	<url>https://github.com/mllw/wabacus</url>
 	<properties>
 	</properties>
 	<licenses>
@@ -23,11 +19,6 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	<scm>
-		<connection>scm:svn:http://wabacus.googlecode.com/svn/</connection>
-		<developerConnection>scm:svn:https://wabacus.googlecode.com/svn/</developerConnection>
-		<url>http://wabacus.googlecode.com/svn/</url>
-	</scm>
 	<developers>
 		<developer>
 			<id>wuweixing</id>
@@ -87,9 +78,6 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
-
-
-
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
@@ -225,12 +213,14 @@
   			<groupId>com.ibm.db2</groupId>
   			<artifactId>db2jcc_license_cu</artifactId>
   			<version>9.7</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 		  <groupId>com.ibm.db2</groupId>
 		  <artifactId>db2jcc</artifactId>
 		  <version>9.1</version>
 		  <classifier>jar</classifier>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -280,24 +270,7 @@
 		 <plugin>
 	        <groupId>org.apache.maven.plugins</groupId>
 	        <artifactId>maven-compiler-plugin</artifactId>
-	        <version>${version.maven-compiler-plugin}</version>
         </plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -311,46 +284,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			      
-       <plugin>
-        <groupId>org.codehaus.groovy.maven</groupId>
-        <artifactId>gmaven-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <id>groovy-magic</id>
-            <phase>package</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <source>
-              	def patchDir =  new File("etc/patch-classes")
-              	if(patchDir.exists()){
-	              	def jar =  project.build.directory+'/'+project.artifactId+'-'+project.version+'.jar';
-	              	
-	             println "add patch classes to artifact jar:${jar}";	
-	              	def tmpjar =jar +".tmp.zip";
-	              	ant.move(file:jar,tofile:tmpjar);
-	                ant.zip(destfile:jar,update:false,duplicate:"preserve"){
-	                	fileset(dir:patchDir);         
-	                	zipfileset(src:tmpjar);       	                		
-	                }; 
-	                ant.delete(file:tmpjar);      
-	            
-                }else{
-                	println "no patch classes";
-                }
-              </source>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>      
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.4</version>
 			</plugin>
 		</plugins>
 	</build>
