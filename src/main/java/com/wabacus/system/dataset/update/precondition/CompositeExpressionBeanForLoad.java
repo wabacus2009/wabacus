@@ -68,7 +68,9 @@ public class CompositeExpressionBeanForLoad
                 if(Tools.isEmpty(expressions)) break;
             }else if(expressions.charAt(0)=='(')
             {//是组合表达式
-                int leftBracket=1, i=0;
+                // fix bug for ()没有成对
+                int leftBracket=0;
+                int i=0;
                 for(;i<expressions.length();i++)
                 {
                     if(expressions.charAt(i)==')')
