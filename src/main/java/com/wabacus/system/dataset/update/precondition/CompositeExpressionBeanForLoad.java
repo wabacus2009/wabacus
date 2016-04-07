@@ -70,9 +70,7 @@ public class CompositeExpressionBeanForLoad
             {//是组合表达式
                 // fix bug for ()没有成对
                 int leftBracket=0;
-                int i=0;
-                for(;i<expressions.length();i++)
-                {
+                for(int i=0;i<expressions.length();i++) {
                     if(expressions.charAt(i)==')')
                     {
                         leftBracket--;
